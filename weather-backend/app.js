@@ -5,6 +5,9 @@ const app = express();
 const { NotFoundError } = require("./expressError");
 
 const weatherRoutes = require("./routes/weather")
+// const wearRoutes = require("./routes/wear.js")
+const generate = require('./apis/generate');
+
 
 const morgan = require("morgan");
 
@@ -13,6 +16,8 @@ app.use(express.json());
 app.use(morgan("tiny"));
 
 app.use("/weather", weatherRoutes)
+app.post('/api/generate', generate);
+
 
 /** Homepage renders simple message. */
 app.get('/', (req, res) => {
@@ -36,6 +41,5 @@ app.use(function (err, req, res, next) {
     error: { message, status },
   });
 });
-
 
 module.exports = app;
