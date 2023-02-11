@@ -25,4 +25,4 @@ async function getLatAndLon(req, res, next) {
   }
 }
 
-module.exports = { getLatAndLon };
+module.exports =  getLatAndLon ;
