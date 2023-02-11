@@ -25,7 +25,6 @@ async function generate(req, res) {
   // }
 
   const weatherData = req.body.weatherData;
-
   try {
     const prompt = generatePrompt(weatherData);
     const response = await axios.post("https://api.openai.com/v1/engines/text-davinci-003/completions", {
@@ -42,7 +41,7 @@ async function generate(req, res) {
       },
     });
     // res.json({tempresult: weatherData})
-    res.status(200).json({ result: response.data.choices[0].text});
+    res.json({ result: response.data.choices[0].text});
   } catch (error) {
     // Consider adjusting the error handling logic for your use case
     console.error(`Error with OpenAI API request: ${error.message}`);
@@ -55,6 +54,7 @@ async function generate(req, res) {
 }
 
 function generatePrompt({temp, feels_like, humidity, wind_speed}) {
+  console.log("generatePromptData;", temp, feels_like, humidity, wind_speed)
 // return `Please rewrite this object of weather data as a paragraph: ${weatherData}. if you are given nothing, say "no weather given `
 return `Given the following weather data, please paraphrase the weather data and then suggest three possible clothing combinations to go out:
 Temperature in Celsius: ${temp},

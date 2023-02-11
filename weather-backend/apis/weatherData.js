@@ -14,15 +14,13 @@ const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
  */
 async function getWeatherData (req, res, next) {
   // res.send("let me tell you about the weather")
-  console.log("req.location in weather route", req.location)
   const {lat, lon} = req.location;
   try {
     // `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid={API key}`);
     const response = await axios.get(
       `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=hourly,daily&appid=${WEATHER_API_KEY}&units=metric`);
-      console.log("response in weather route", response)
       req.weatherData = response.data.current;
-      res.json(response.data.current)
+      // res.json(response.data.current)
       next();
   }
   catch (err) {
