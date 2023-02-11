@@ -21,8 +21,8 @@ async function getWeatherData (req, res, next) {
     const response = await axios.get(
       `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=hourly,daily&appid=${WEATHER_API_KEY}&units=metric`);
       console.log("response in weather route", response)
-      req.weather = response.data;
-      res.json(response.data)
+      req.weatherData = response.data.current;
+      res.json(response.data.current)
       next();
   }
   catch (err) {
