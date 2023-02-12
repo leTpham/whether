@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+
 
 /** Homepage of site.
  *
@@ -11,6 +13,7 @@ import { Link } from "react-router-dom";
  */
 
 function Homepage() {
+  const navigate = useNavigate()
   return (
     <div>
       <div>
@@ -21,7 +24,7 @@ function Homepage() {
           But with Whether, peace remains
           <br />
           No more shivering pains!</p>
-
+          <button onClick = {() => navigate("/where-thee")}>let's go</button>
       </div>
     </div>
   );
