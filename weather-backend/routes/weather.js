@@ -18,10 +18,9 @@ const { default: axios } = require("axios");
   // res.send("let me tell you about the weather")
 router.get("/", getLatAndLon, getWeatherData, async function suggest (req, res, next) {
   let weatherData = req.weatherData
-  let results = await axios.post("http://localhost:3000/api/generate", {
+  let results = await axios.post("http://localhost:3001/api/generate", {
     "weatherData": weatherData
   })
-  console.log("RESULTS FROM ROUTE", results.data.result)
   res.json({"result": results.data.result})
 })
 

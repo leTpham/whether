@@ -8,9 +8,9 @@ const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
  * to fetch weather data of the location
  * *
  * TODO: frontend needs form to fill in query
- * eg: http://localhost:3000/weather?city=oakland&state=ca&country=us&limit=5
+ * eg: http://localhost:3001/weather?city=oakland&state=ca&country=us&limit=5
  * OR with space, add "%20"
- * http://localhost:3000/weather?city=new%20york&state=ny&country=us&limit=5
+ * http://localhost:3001/weather?city=new%20york&state=ny&country=us&limit=5
  */
 async function getWeatherData (req, res, next) {
   // res.send("let me tell you about the weather")
