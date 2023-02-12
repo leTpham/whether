@@ -56,12 +56,16 @@ async function generate(req, res) {
 function generatePrompt({temp, feels_like, humidity, wind_speed}) {
   console.log("generatePromptData;", temp, feels_like, humidity, wind_speed)
 // return `Please rewrite this object of weather data as a paragraph: ${weatherData}. if you are given nothing, say "no weather given `
-return `Given the following weather data, please paraphrase the weather data and then suggest three possible clothing combinations to go out:
-Temperature in Celsius: ${temp},
-Temperate feels like: ${feels_like},
-Humidity level in percentage: ${humidity},
-Speed of wind: ${wind_speed}.
-Include at the end a funny comment on the weather.`
+return `Please generate a witty, conversational message about whether one should wear a jacket based on the following weather conditions:
+Temperature: ${temp}°C,
+Feels like: ${feels_like}°C,
+Humidity: ${humidity}%,
+Wind Speed: ${wind_speed} mph.
+
+The message should convey the necessary weather information and offer a suggestion
+for whether a jacket should be worn.
+It should be written in a fun, engaging, and memorable way that will vary
+each time the user accesses the app.`
   // return `Suggest three possible clothing combinations based on the weather data provided below.
   // ${weatherData}. If no weather data is provided, say "NEED WEATHER DATA"`
 }
