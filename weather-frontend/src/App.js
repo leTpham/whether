@@ -15,7 +15,9 @@ function App() {
 
   return (
     <div className="App">
+      <div>
       <RoutesList locate={locate} suggestion={suggestion} />
+      </div>
     </div>
   );
 }

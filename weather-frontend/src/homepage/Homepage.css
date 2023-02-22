@@ -1,0 +1,17 @@
+.Homepage {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    justify-content: space-around;
+}
+
+.welcome-text {
+    /* background-color: aqua; */
+    padding: 2.5rem;
+}
+
+h1 {
+    /* color: yellow; */
+}
