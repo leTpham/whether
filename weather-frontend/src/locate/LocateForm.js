@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-
+import "./LocateForm.css"
 /** Locate form
  *
  * Shows form and manages to update state on changes.
@@ -46,34 +46,37 @@ function LocateForm({locate}) {
 
 return (
   <div>
-    <div>
+    <div className="Locate-form">
       <h2>WYA?</h2>
-      <div>
+      <div className="form-body">
         <form onSubmit={handleSubmit}>
-        <div>
+        <div className="label-input">
           <label>City</label>
           <input
           name="city"
           value={formData.city}
           onChange={handleChange}
+          placeholder="San Francisco"
           />
         </div>
 
-        <div>
+        <div className="label-input">
           <label>State</label>
           <input
           name="state"
           value={formData.state}
           onChange={handleChange}
+          placeholder="CA"
           />
         </div>
 
-        <div>
+        <div className="label-input">
           <label>Country</label>
           <input
           name="country"
           value={formData.country}
           onChange={handleChange}
+          placeholder="US"
           />
         </div>
         <div>
