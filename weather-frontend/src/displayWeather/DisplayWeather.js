@@ -1,12 +1,12 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Button from "../button/Button";
 import "./DisplayWeather.css"
 function DisplayWeather({suggestion}) {
   const navigate = useNavigate();
   return (
     <div className="suggestion">
       {suggestion}
-      <button onClick={()=> navigate("/where-thee")}
-> locate me again please</button>
+      <Button action={()=> navigate("/where-thee")} text="Again please"></Button>
       </div>
   )
 }

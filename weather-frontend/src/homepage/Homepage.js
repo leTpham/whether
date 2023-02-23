@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Button from "../button/Button"
 import "./Homepage.css"
 
 /** Homepage of site.
@@ -25,7 +25,7 @@ function Homepage() {
           <br />
           No more shivering pains!</p>
           </div>
-          <button onClick = {() => navigate("/where-thee")}>let's go</button>
+          <Button action={() => navigate("/where-thee")} text= "let's go"></Button>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import Button from "../button/Button";
 import "./LocateForm.css"
 /** Locate form
  *
@@ -80,9 +81,7 @@ return (
           />
         </div>
         <div>
-          <button onClick={handleSubmit}>
-              Submit
-          </button>
+          <Button action={handleSubmit} text="Submit"></Button>
         </div>
 
         </form>
