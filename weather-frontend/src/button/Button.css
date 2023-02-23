@@ -1,0 +1,14 @@
+.button {
+    padding: 0.35rem 0.35rem;
+    text-align:center;
+    transition-duration: 0.2s;
+    margin: 0.5rem 0.5rem;
+    border-radius: 10%;
+
+}
+
+.button:hover {
+    background-color: rgba(48, 27, 27, 0.56);
+    color: white;
+    box-shadow: none;
+}
